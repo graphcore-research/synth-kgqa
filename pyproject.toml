@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synth-kgqa"
+authors = [
+  { name="Alberto Cattaneo", email="albertoc@graphcore.ai" },
+  { name="Daniel Justus", email="danielj@graphcore.ai" },
+]
+description = "A framework to generate Knowledge Graph Question Answering synthetic datasets from any KG"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy==1.26.4",
+  "torch==2.4.0",
+  "torch_geometric",
+  "networkx==3.4.2",
+  "ogb==1.3.6",
+  "pandas==2.3.2",
+  "google-generativeai==0.8.3",
+  "openai==1.87.0",
+  "matplotlib==3.10.5",
+  "seaborn==0.13.2",
+  "graphviz==0.20.3",
+  "SPARQLWrapper==2.0.0",
+  "vllm==0.6",
+  "transformers==4.55.4",
+  "rdflib==7.1.4",
+]
+
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+    "mypy",
+    "flake8",
+    "flake8-copyright",
+]
+
+[project.urls]
+Homepage = "https://github.com/graphcore-research/synth-kgqa"
+Issues = "https://github.com/graphcore-research/synth-kgqa/issues"
+
+[tool.setuptools]
+py-modules = ["synth_kgqa"]
+packages = ["synth_kgqa"]
+
+[tool.setuptools.dynamic]
+version = {attr = "synth_kgqa.__version__"}
+
+[tool.flake8]
+max-line-length = 88
+select = ["E", "F", "W", "C"]
+copyright-check = true
+copyright-author = "Graphcore Ltd."
+extend-ignore = ["E203", "E704", "W503"]
+exclude = [
+    ".git",
+    "__pycache__",
+    ".venv*"
+]

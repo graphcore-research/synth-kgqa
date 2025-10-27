@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-graph-walk"
+requires-python = ">=3.8"
+dependencies = [
+  "numpy==2.2.1",
+  "google-generativeai==0.8.3",
+  "openai==1.59.5",
+  "graphviz==0.20.3",
+  "requests==2.32.2",
+  "torch==2.4.0",
+  "torch_geometric==2.6.1",
+  "transformers==4.48.2",
+  "networkx==3.4.2",
+  "seaborn==0.13.2",
+  "SPARQLWrapper==2.0.0",
+  "beautifulsoup4==4.13.3",
+  "accelerate==0.26.0",
+  "datasets",
+  "wandb",
+]
+
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+    "mypy",
+    "flake8",
+    "flake8-copyright",
+]
+
+[tool.setuptools]
+py-modules = ["llm_graph_walk"]
+packages = ["llm_graph_walk"]
+
+[tool.setuptools.dynamic]
+version = {attr = "llm_graph_walk.__version__"}
