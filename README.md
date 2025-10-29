@@ -51,7 +51,7 @@ Using the SynthKGQA framework and the [ogbl-wikikg2](https://ogb.stanford.edu/do
 ```python
 from datasets import load_dataset
 
-gtsqa = load_dataset("Graphcore/GTSQA", name="gtsqa")
+gtsqa = load_dataset("Graphcore/GTSQA")
 ```
 
 See [this notebook](notebooks/preporcess_wikikg2.ipynb) for the preprocessing steps of ogbl-wikikg2 and [this notebook](notebooks/gtsqa.ipynb) for the final post-processing steps applied to collate the data. 
