@@ -59,8 +59,6 @@ See [this notebook](notebooks/preporcess_wikikg2.ipynb) for the preprocessing st
 The question-specific subgraphs of ogbl-wikikg2 generated with `synth_kgqa/compute_neighs_and_sp.py` can also be downloaded with the dataset, by using the alternative config:
 
 ```python
-from datasets import load_dataset
-
 gtsqa = load_dataset("Graphcore/GTSQA", name="gtsqa-with-graphs")
 ```
 
