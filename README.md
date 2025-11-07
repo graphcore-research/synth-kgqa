@@ -9,7 +9,7 @@ SynthKGQA is a framework to generate large, high-quality, synthetic Knowledge Gr
 </figure>
 </div>
 
-This repository contains the code to reproduce the results of the paper "Ground-Truth Subgraphs for Better Training and Evaluation of Knowledge Graph Augmented LLMs".
+This repository contains the code to reproduce the results of the paper [Ground-Truth Subgraphs for Better Training and Evaluation of Knowledge Graph Augmented LLMs](https://arxiv.org/abs/2511.04473).
 
 ## Setup
 
@@ -54,6 +54,8 @@ from datasets import load_dataset
 gtsqa = load_dataset("Graphcore/GTSQA")
 ```
 
+More details and statistics on the dataset are available in the [paper](https://arxiv.org/abs/2511.04473).
+
 See [this notebook](notebooks/preporcess_wikikg2.ipynb) for the preprocessing steps of ogbl-wikikg2 and [this notebook](notebooks/gtsqa.ipynb) for the final post-processing steps applied to collate the data. 
 
 The question-specific subgraphs of ogbl-wikikg2 generated with `synth_kgqa/compute_neighs_and_sp.py` can also be downloaded with the dataset, by using the alternative config:
@@ -73,7 +75,15 @@ We also provide a [notebook](notebooks/paper_analysis.ipynb) to reproduce the an
 When referring to this work, please cite our paper.
 
 ```
-@misc{}
+@misc{cattaneo2025,
+      title={Ground-Truth Subgraphs for Better Training and Evaluation of Knowledge Graph Augmented LLMs}, 
+      author={Alberto Cattaneo and Carlo Luschi and Daniel Justus},
+      year={2025},
+      eprint={2511.04473},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2511.04473}, 
+}
 ```
 
 ## License
